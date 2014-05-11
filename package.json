@@ -16,5 +16,8 @@
     "server"
   ],
   "author": "sanny mulyono",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.1.2"
+  }
 }
