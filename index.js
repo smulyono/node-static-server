@@ -6,9 +6,17 @@ var app = express();
 app.use(compress());
 
 // route to static file
-app.serve = function(dir, path){
-    app.use("/", express.static(path));
+app.servePath = function(dir, path){
+    app.use(dir, express.static(path));
 };
 
+
+app.serve = function(opt){
+    if (typeof opt === "object"){
+        for (var key in opt){
+            app.use(key, express.static(opt[key]));
+        }
+    }
+};
 
 module.exports = app;
